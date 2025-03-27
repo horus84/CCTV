@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' http://127.0.0.1:5001 data:; connect-src http://127.0.0.1:5001;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VC CCTV Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Cameras</h2>
+            <div id="camera-list">
+                <!-- Camera tree will be populated here by renderer.js -->
+                <p>Loading cameras...</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <div id="video-container">
+                <p>Select a camera from the list to view the stream.</p>
+                <!-- Video stream (img tag for MJPEG) will be added here -->
+            </div>
+            <div id="ai-status" class="status-bar">
+                AI Status: Idle
+            </div>
+             <div id="error-message" class="error-bar" style="display: none;">
+                <!-- Error messages will be shown here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

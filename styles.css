@@ -1,0 +1,134 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Prevent body scrollbars */
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #e9e9e9;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Allow scrolling if camera list is long */
+    height: 100%;
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+#camera-list ul {
+    list-style-type: none;
+    padding-left: 15px; /* Indentation for nested levels */
+    margin: 0;
+}
+
+#camera-list li {
+    margin-bottom: 5px;
+}
+
+#camera-list details summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 3px 0;
+}
+#camera-list details summary:hover {
+    color: #007bff;
+}
+
+
+#camera-list .camera-item {
+    display: block; /* Make it take full width */
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 3px;
+    margin-left: -8px; /* Align with summary */
+    transition: background-color 0.2s ease;
+}
+
+#camera-list .camera-item:hover {
+    background-color: #d0d0d0;
+}
+
+#camera-list .camera-item.selected {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent main content scrollbars */
+}
+
+#video-container {
+    flex-grow: 1; /* Take available vertical space */
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    margin-bottom: 10px; /* Space before status bar */
+    position: relative; /* For potential overlays */
+    overflow: hidden; /* Ensure video doesn't overflow */
+}
+
+#video-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Scale video while maintaining aspect ratio */
+}
+
+.status-bar {
+    padding: 8px 12px;
+    background-color: #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #333;
+    text-align: center;
+}
+
+.status-bar.visible {
+    background-color: #28a745; /* Green for visible */
+    color: white;
+}
+
+.status-bar.not-visible {
+    background-color: #ffc107; /* Yellow for not visible */
+    color: #333;
+}
+
+.status-bar.error {
+    background-color: #dc3545; /* Red for error */
+    color: white;
+}
+
+.error-bar {
+    padding: 8px 12px;
+    background-color: #dc3545; /* Red */
+    color: white;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 10px; /* Space from video or status */
+}

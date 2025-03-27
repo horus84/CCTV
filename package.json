@@ -1,0 +1,17 @@
+{
+  "name": "vc-cctv-monitor-frontend",
+  "version": "1.0.0",
+  "description": "Frontend UI for VC CCTV Monitor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^35.1.0"
+  }
+}
